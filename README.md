@@ -1,4 +1,4 @@
-# goit-markup-hw-02
+# [goit-markup-hw-02](https://mesterum.github.io/goit-markup-hw-02/)
 
 ## Tema de la cursul de Full Stack Developer -> HTML & CSS RO 3.0 -> Modulul 2. Elementele de bază ale HTML de la [Go IT](https://www.edu.goit.global/ro)
 
