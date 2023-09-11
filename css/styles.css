@@ -182,10 +182,11 @@ footer > address {
   border-radius: 4px;
   border-style: none;
   cursor: pointer;
-}
-.filter li:first-child > button {
-  color: var(--white-color);
-  background: var(--blue-color);
+  &:hover,
+  &:focus {
+    color: var(--white-color);
+    background: var(--blue-color);
+  }
 }
 .projects li {
   border: 1px solid #eee;
