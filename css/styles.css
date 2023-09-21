@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap");
+@import url("https://unpkg.com/modern-normalize");
 
 :root {
   --blue-color: #2196f3;
@@ -14,24 +15,55 @@
 ul,
 menu {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
 body {
   font-family: Roboto, sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  background-color: var(--white-color);
 }
-
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 15px;
+  border: none;
+}
 /*#region header */
-header {
+header > .container {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  border-bottom: 1px solid #ececec;
+
   font-weight: 500;
   letter-spacing: 0.28px;
 }
 header a {
   text-decoration: none;
+  height: 80px;
+  padding: calc(38px - 0.5em) 0;
+  display: inline-block;
 }
-header > a {
+header > .container > a {
   > :first-child {
     color: var(--blue-color);
   }
@@ -41,8 +73,10 @@ header > a {
   font-weight: 700;
   letter-spacing: 0.78px;
 }
-/* .black {
-} */
+header nav menu {
+  display: flex;
+  column-gap: 50px;
+}
 header nav a {
   color: var(--dark-color);
   &[href="#"],
@@ -52,6 +86,15 @@ header nav a {
   }
 }
 
+#spacer1 {
+  flex: 0 1 calc(42% - 300px);
+}
+.contact {
+  display: flex;
+  column-gap: 40px;
+  margin-right: 10px;
+  align-items: center;
+}
 .contact a {
   color: var(--grey-color);
   &:hover,
@@ -63,16 +106,19 @@ header nav a {
 /*#region index.html */
 .head {
   background: var(--blue-bg-color);
-  width: 1600px;
+  /* width: 1600px; */
   /* height: 600px; */
   color: var(--white-color);
   text-align: center;
+  padding: 200px 0;
   > h1 {
     font-size: 44px;
     font-weight: 900;
     line-height: 136.364%;
     letter-spacing: 2.64px;
     text-transform: uppercase;
+    width: 16em;
+    margin: 0 auto 30px;
   }
   > button {
     width: 200px;
@@ -94,6 +140,12 @@ header nav a {
     }
   }
 }
+
+.about-us .container {
+  display: flex;
+  column-gap: 30px;
+  padding-top: 94px;
+}
 .about-us li {
   letter-spacing: 0.42px;
   > h3 {
@@ -101,6 +153,7 @@ header nav a {
     font-size: 0.875rem;
     font-weight: 700;
     text-transform: uppercase;
+    margin: 0 0 10px;
   }
   > p {
     color: var(--grey-color);
@@ -114,41 +167,57 @@ header nav a {
   font-size: 2.25rem;
   font-weight: 700;
   letter-spacing: 0.0675rem;
+  margin: 0 0 50px;
+}
+.acts,
+.team {
+  padding: 94px 0;
+}
+:is(.acts, .team) .container {
+  display: flex;
+  column-gap: 30px;
 }
 .acts img {
   width: 370px;
-  height: 294px;
+  /* height: 294px; */
 }
 .team {
   background: var(--team-bg-color);
 }
 .team li {
-  text-align: center;
+  border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   font-size: 1rem;
   letter-spacing: 0.03rem;
   > img {
-    text-align: left;
     width: 270px;
-    height: 260px;
+    /* height: 260px; */
   }
-  > h3 {
-    color: var(--dark-color);
-    font-weight: 500;
-    font-size: 1rem;
-  }
-  > .role {
-    color: var(--grey-color);
-    font-weight: 400;
+  > div {
+    padding: 30px 0;
+    text-align: center;
+    > h3 {
+      color: var(--dark-color);
+      font-weight: 500;
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+    > .role {
+      color: var(--grey-color);
+      font-weight: 400;
+    }
   }
 } /*#endregion*/
 
 /*#region footer */
 footer {
-  width: 1600px;
+  /* width: 1600px; */
   /* height: 251px; */
   background: var(--blue-bg-color);
+  padding: 60px 0;
 }
-footer > a:first-child {
+footer .container > a:first-child {
   > :first-child {
     color: var(--blue-color);
   }
@@ -159,17 +228,32 @@ footer > a:first-child {
   font-weight: 700;
   letter-spacing: 0.78px;
 }
-footer > address {
+footer .container > address {
+  margin-top: 28px;
   color: var(--white-color);
   letter-spacing: 0.42px;
   font-style: normal;
+  width: 231px;
   & .address ~ * {
+    /* flex-shrink: 0; */
+    margin-top: 12px;
     color: var(--white-tr-color);
-    line-height: 16px; /* 114.286% */
+    line-height: 114.286%;
   }
 } /*#endregion*/
 
 /*#region portfolio.html */
+section:has(.filter) {
+  padding: 94px 0;
+  > .container {
+    text-align: center;
+  }
+}
+.filter {
+  margin: 0 auto 50px;
+  display: inline-flex;
+  column-gap: 8px;
+}
 .filter button {
   color: var(--dark-color);
   background: var(--team-bg-color);
@@ -188,26 +272,38 @@ footer > address {
     background: var(--blue-color);
   }
 }
+.projects {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
 .projects li {
-  border: 1px solid #eee;
+  flex: 0 0 calc((100% - 60px) / 3);
   background: #fff;
   > img {
     width: 370px;
-    height: 294px;
+    /* height: 294px; */
   }
-  > h3 {
-    color: var(--dark-color);
-    font-size: 18px;
-    font-weight: 700;
-    font-style: normal;
-    line-height: 200%;
-    letter-spacing: 1.08px;
-  }
-  > span {
-    color: var(--grey-color);
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 187.5%;
-    letter-spacing: 0.48px;
+  > div {
+    border: 1px solid #eee;
+    border-top: none;
+    padding: 20px 24px;
+    > h3 {
+      color: var(--dark-color);
+      font-size: 18px;
+      font-weight: 700;
+      font-style: normal;
+      line-height: 200%;
+      letter-spacing: 1.08px;
+    }
+    > span {
+      margin-top: 4px;
+      color: var(--grey-color);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 187.5%;
+      letter-spacing: 0.48px;
+    }
   }
 } /*#endregion*/
