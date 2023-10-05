@@ -382,7 +382,7 @@ section:has(.filter) {
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
-  /* justify-content: space-evenly; */
+  justify-content: center;
 }
 .projects li {
   /* flex: 0 0 calc((100% - 60px) / 3); */
