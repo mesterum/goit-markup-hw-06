@@ -11,7 +11,7 @@
   --white-tr-color: rgba(255, 255, 255, 0.6);
   --white-color: #fff;
   --black-color: #000;
-  --extra-width: max(0px, (100vw - 1170px)/2);
+  --extra-width: max(0px, 50vw - 600px);
 }
 ul,
 menu {
@@ -207,7 +207,7 @@ header nav a {
   display: flex;
   --part-width: calc(var(--extra-width) / var(--no-items, 2));
   column-gap: calc(30px + var(--part-width));
-  padding: 94px calc(15px + var(--part-width) / 2);
+  padding: 0 calc(15px + var(--part-width) / 2);
   /* --no-items: counter(list-item); */
   > * {
     flex-grow: 1;
