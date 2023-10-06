@@ -80,10 +80,22 @@ header nav menu {
 }
 header nav a {
   color: var(--dark-color);
+  position: relative;
+  &::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    border: 2px solid var(--blue-color);
+    border-radius: 2px;
+  }
   &[href="#"],
   &:hover,
   &:focus {
     color: var(--blue-color);
+    &::after {
+      content: "";
+    }
   }
 }
 
@@ -219,6 +231,23 @@ header nav a {
 .acts img {
   width: 100%; /* 370px; */
   /* height: 294px; */
+}
+:has(.label) {
+  position: relative;
+}
+.label {
+  background: #2f303acc;
+  height: 4.375rem;
+  width: 100%;
+  padding: 1.7rem 0;
+  color: #fff;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.02625rem;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 0;
 }
 .team {
   --no-items: 4;
