@@ -7,20 +7,19 @@
   closeModalBtn.forEach(e => e.addEventListener("click", closeModal));
   modal.addEventListener("click", closeModal);
 
-  function closeModal({currentTarget, srcElement}) {
-    if (this != modal || this == srcElement) modal.classList.add("is-hidden");
+  function closeModal({x, y, srcElement}) {
+    if (this != modal || this == srcElement) {
+      modal.style.transformOrigin = x + "px " + y + "px";
+      modal.classList.add("is-hidden");
+    }
   }
 
   function toggleModal() {
     modal.classList.toggle("is-hidden");
   }
   function openModal({x, y}) {
-    const {width, height} = window.visualViewport;
-    modal.style.transformOrigin =
-      ((x / width) * 100).toFixed(4) +
-      "% " +
-      ((y / height) * 100).toFixed(4) +
-      "%";
+    // const {width, height} = window.visualViewport;
+    modal.style.transformOrigin = x + "px " + y + "px";
     modal.classList.remove("is-hidden");
   }
 })();
