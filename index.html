@@ -35,13 +35,48 @@
       <h1>EFFECTIVE SOLUTIONS FOR YOUR BUSINESS</h1>
       <button type="button" class="big-button" data-modal-open>Request our service</button>
       <div class="is-hidden" data-modal data-modal-close>
-        <div>
+        <div class="service-request">
           <svg data-modal-close>
             <use href="images/icons.svg#close" />
           </svg>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore aliquam error, facilis cum perferendis
-          ipsam animi vitae similique, provident cupiditate velit dolore laboriosam dicta optio aspernatur quo!
-          Expedita, ab nostrum!
+          <form action="#" method="get">
+            <h3>Leave your information and we'll call you back</h3>
+            <label for="name" class="input">
+              Name
+              <input type="text" name="name" id="name" required>
+              <svg>
+                <use href="images/icons.svg#name" />
+              </svg>
+            </label>
+            <label for="telephone" class="input">
+              Telephone
+              <input type="tel" name="telephone" id="telephone" required>
+              <svg>
+                <use href="images/icons.svg#telephone" />
+              </svg>
+            </label>
+            <label for="e-mail" class="input">
+              E-mail
+              <input type="email" name="e-mail" id="e-mail" required>
+              <svg>
+                <use href="images/icons.svg#e-mail" />
+              </svg>
+            </label>
+            <label for="comments" class="input">
+              Comments
+              <textarea name="comments" id="comments" cols="30" rows="10" placeholder="Enter the text"></textarea>
+            </label>
+            <label for="agree">
+              <input type="checkbox" name="agree" id="agree" required>
+              <svg>
+                <use href="images/icons.svg#unchecked-box" />
+                <use href="images/icons.svg#checked-box" class="checked" />
+              </svg>
+              I agree with the letter and accept the
+            </label>
+            <a href="#">Terms and Conditions</a>
+            <input type="submit" value="Send">
+          </form>
         </div>
       </div>
       <script src="js/modal.js"></script>

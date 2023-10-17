@@ -139,26 +139,141 @@ header nav a {
   /* transform: none; */
   transition: transform 250ms, opacity 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  > div {
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.service-request {
+  font-size: 1rem;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  /* aspect-ratio: 528 / 581; */
+  width: min(80%, 33em);
+  /* height: min(80%, 36.3125em); */
+  /* height: 56.65625%; */
+  border-radius: 0.25em;
+  background: #fff;
+  padding: 2.5em;
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  > svg[data-modal-close] {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    width: 1.875em;
+    height: 1.875em;
+    cursor: pointer;
+    clip-path: circle();
+    fill: black;
+    &:hover {
+      fill: var(--blue-color);
+    }
+  }
+  & h3 {
+    /* width: 28em; */
+    color: var(--dark-color);
+    text-align: center;
+    font-size: 1.25em;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.1em;
+  }
+  & label.input {
+    color: var(--grey-color);
+    font-size: 0.75em;
+    letter-spacing: 0.01em;
     position: relative;
-    /* aspect-ratio: 528 / 581; */
-    width: min(80%, 33rem);
-    height: min(80%, 36.3125rem);
-    /* height: 56.65625%; */
-    border-radius: 4px;
-    background: #fff;
-    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
-      0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-    > svg[data-modal-close] {
+    display: block;
+    text-align: left;
+    padding-top: 0.833em;
+
+    > textarea,
+    > input {
+      font-size: 1.33em;
+      display: block;
+      width: 100%;
+      border-radius: 0.25em;
+      border: 1px solid rgba(33, 33, 33, 0.2);
+      margin-top: 0.25em;
+      &:focus-visible {
+        outline-color: var(--blue-color);
+      }
+    }
+    > input {
+      height: 2.5em;
+      padding-left: 2.625em;
+      &:focus-visible + svg {
+        fill: var(--blue-color);
+      }
+    }
+    > textarea {
+      height: 7.5em;
+      padding: 0.75em 1em;
+      &::placeholder {
+        color: rgba(117, 117, 117, 0.5);
+        font-size: 0.75em;
+        letter-spacing: 0.01em;
+      }
+    }
+    > svg {
       position: absolute;
-      top: 8px;
-      right: 8px;
-      width: 30px;
-      height: 30px;
-      fill: white;
-      cursor: pointer;
-      clip-path: circle();
+      width: 1.5em;
+      height: 1.5em;
+      top: 3.25em;
+      left: 1em;
+    }
+  }
+  & label[for="agree"] {
+    &,
+    & + a {
+      margin-top: 1.4286em;
+      height: 1.7143em;
+      font-size: 0.875em;
+      line-height: 171.429%;
+      letter-spacing: 0.03em;
+    }
+    color: var(--grey-color);
+    display: inline-block;
+    position: relative;
+    + a {
+      color: var(--blue-color);
+      text-decoration-line: underline;
+    }
+    > svg {
+      position: absolute;
+      top: 0.2857em;
+      left: -0.3571em;
+      width: 1.1429em;
+      height: 1.0714em;
+      .checked {
+        opacity: 0;
+      }
+      /* top: 4px;
+      left: -5px;
+      width: 16px;
+      height: 15px; */
+    }
+    > input {
+      opacity: 0;
+      &:checked + svg .checked {
+        opacity: 1;
+      }
+    }
+  }
+  & input[type="submit"] {
+    display: block;
+    margin: 2.5em auto 0;
+    width: 12.5em;
+    height: 3.125em;
+    border-radius: 0.25em;
+    border: none;
+    background: var(--blue-color);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    color: var(--white-color);
+    /* text-align: center; */
+    /* font-size: 1em; */
+    font-weight: 700;
+    line-height: 1.875em; /* 187.5% */
+    letter-spacing: 0.06em;
+    &:hover {
+      background-color: var(--blue-focus-color);
     }
   }
 }
@@ -184,7 +299,7 @@ header nav a {
   color: var(--white-color);
   text-align: center;
   padding: 12.5em 0;
-  > h1 {    
+  > h1 {
     font-size: 2.75em;
     font-weight: 900;
     line-height: 136.364%;
@@ -227,14 +342,14 @@ header nav a {
   flex: 0;
   /* margin: 0 max(11px, calc((25% - 292px) / 4)); */
   letter-spacing: 0.42px;
-  font-size: calc(1rem + var(--space-left, 0px)/8.4375);
+  font-size: calc(1rem + var(--space-left, 0px) / 8.4375);
   width: 16.875em;
   /* &:not(:last-child) {
     margin-right: max(30px, calc((25% - 293px) / 2));
   } */
   > div:has(> svg) {
     border-radius: 0.25em;
-    background: #F5F4FA;
+    background: #f5f4fa;
     /* width: 270px; */
     text-align: center;
     width: 16.875em;
@@ -287,7 +402,7 @@ header nav a {
   --no-items: 3;
 }
 .acts li {
-  font-size: calc(1rem + var(--part-width, 0px)/23.125);
+  font-size: calc(1rem + var(--part-width, 0px) / 23.125);
   width: 23.125em;
   position: relative;
 }
@@ -317,7 +432,7 @@ header nav a {
   border-radius: 0px 0px 4px 4px;
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-  font-size: calc(1rem + var(--part-width, 0px)/16.875);
+  font-size: calc(1rem + var(--part-width, 0px) / 16.875);
   width: 16.875em;
   letter-spacing: 0.03em;
   > img {
@@ -331,7 +446,7 @@ header nav a {
       color: var(--dark-color);
       font-weight: 500;
       font-size: 1em;
-      margin-bottom: .625em;
+      margin-bottom: 0.625em;
     }
     > .role {
       color: var(--grey-color);
@@ -360,7 +475,7 @@ header nav a {
   border: 1px solid #afb1b8;
   padding: 1em 2em;
   width: 10.625em;
-  font-size: calc(1rem + var(--part-width, 0px)/10.625);
+  font-size: calc(1rem + var(--part-width, 0px) / 10.625);
   > svg {
     width: 6.625em;
     /* height: 60px; */
