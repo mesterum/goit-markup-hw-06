@@ -12,22 +12,38 @@
   <header>
     <div class="container">
       <a href="./" class="logo"><span>Web</span><span>Studio</span></a>
-      <nav>
-        <menu>
-          <li><a href="#">Studio</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="notDone.html">Contacts</a></li>
-        </menu>
-      </nav>
-      <div id="spacer1"></div>
-      <div class="contact">
-        <a href="mailto:info@devstudio.com"><svg viewBox="0 0 21 16">
-            <use href="images/icons.svg#envelope"></use>
-          </svg><span>info@devstudio.com</span></a>
-        <a href="tel:+1212-772-4150"><svg viewBox="0 0 10 16">
-            <use href="images/icons.svg#smartphone"></use>
-          </svg><span>+1 212-772-4150</span></a>
+      <svg class="js-open-menu" width="40" height="40">
+        <use href="images/icons.svg#menu-open"/>
+      </svg>
+      <div class="js-menu-container">
+        <svg class="js-close-menu" width="40" height="40">
+        <use href="images/icons.svg#close"/>
+        </svg>
+        <nav>
+          <menu>
+            <li><a href="#">Studio</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="notDone.html">Contacts</a></li>
+          </menu>
+        </nav>
+        <div id="spacer1"></div>
+        <div class="contact">
+          <a href="mailto:info@devstudio.com"><svg viewBox="0 0 21 16" width="16">
+              <use href="images/icons.svg#envelope"/>
+            </svg><span>info@devstudio.com</span></a>
+          <a href="tel:+1212-772-4150"><svg viewBox="0 0 10 16">
+              <use href="images/icons.svg#smartphone"/>
+            </svg><span>+1 212-772-4150</span></a>
+        </div>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
       </div>
+      <script defer src="js/libs/body-scroll-lock@3.1.5/bodyScrollLock.min.js"></script>
+      <script defer src="js/mobile-menu.js"></script>
     </div>
   </header>
   <main>
@@ -37,6 +53,7 @@
       <div class="is-hidden" data-modal data-modal-close>
         <div class="service-request">
           <svg data-modal-close>
+            <circle cx="15" cy="15" r="14.5" stroke="#000" fill="#fff" stroke-opacity=".1" />
             <use href="images/icons.svg#close" />
           </svg>
           <form action="#" method="get">
